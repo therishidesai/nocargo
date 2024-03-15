@@ -11,7 +11,7 @@
 
   outputs = { self, flake-utils, nixpkgs, registry-crates-io, nix-filter }@inputs:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
       inherit (builtins) toJSON typeOf;
       inherit (nixpkgs.lib) isDerivation isFunction isAttrs mapAttrsToList listToAttrs flatten;

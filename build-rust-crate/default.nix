@@ -15,7 +15,7 @@
 , buildFlags ? []
 , buildScriptBuildFlags ? []
 , procMacro ? false
-
+, buildInputs ? []
 , nativeBuildInputs ? []
 , propagatedBuildInputs ? []
 , ...
@@ -92,6 +92,12 @@ let
     inherit pname version src;
 
     nativeBuildInputs = [ toml2json jq ] ++ nativeBuildInputs;
+    buildInputs = lib.optionals stdenv.isDarwin [
+      darwin.Security
+      darwin.apple_sdk.frameworks.CoreServices
+      darwin.cf-private
+      darwin.libiconv
+    ] ++ buildInputs;
 
     sharedLibraryExt = stdenv.hostPlatform.extensions.sharedLibrary;
 
