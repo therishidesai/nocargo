@@ -1539,6 +1539,7 @@
 "forward_goto"
 "foundationdb-macros"
 "four-char-code-macros-impl"
+"foxglove_derive"
 "fp-bindgen-macros"
 "fpdec-macros"
 "fraco_point_derive"
