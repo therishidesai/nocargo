@@ -1,4 +1,4 @@
-{ lib, nocargo-lib, stdenv, buildPackages, rust, toml2json, jq }:
+{ lib, nocargo-lib, stdenv, buildPackages, rust, toml2json, jq, darwin}:
 { pname
 , version
 , src
